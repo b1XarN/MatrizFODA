@@ -1,0 +1,77 @@
+.campos-inic{
+    margin-top: 15px;
+}
+
+.submit-inic{
+    margin-top: 15px;
+}
+
+.formulario{
+    text-align: center;
+}
+
+.titulo-form{
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.contenedor-inic{
+    margin-top: 45px;
+}
+
+.red{
+    background: red;
+}
+
+.blue{
+    background: blue;
+}
+
+.side{
+    background: #4357ad;
+}
+
+.contenido{
+    background: #f2f2f2;
+}
+
+.links-side{
+    display: block;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    padding: 10px 5px;
+}
+
+.links-side:hover{
+    display: block;
+    text-decoration: none;
+    font-size: 30px;
+    color: #fff;
+    padding: 10px 5px;
+}
+
+.nueva-empresa{
+    width: 100%;
+}
+
+.nueva-empresa .campos-empresa{
+    width: 80%;
+}
+
+.empresas{
+    border: 2px solid #0e2b37;
+    border-radius: 10px;    
+}
+
+.formulario-editar-empresa{
+    text-align: center;
+    background: #000;
+}
+
+.campos-edit-matriz{
+    width: 80%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-right: 50px;
+}
