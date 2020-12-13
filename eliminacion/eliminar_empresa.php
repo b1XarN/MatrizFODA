@@ -1,21 +1,29 @@
 <?php
-    require_once 'conexion.php';
-    // session_start();
+    require_once '../conexion.php';
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
     <script src="https://kit.fontawesome.com/496cc02742.js" crossorigin="anonymous"></script>
-    <title>Menu Principal</title>
+    <title>Nueva Empresa</title>
 </head>
 <body>
+    <?php 
+        $sql = "SELECT * FROM EMPRESA WHERE idEmpresa=$_GET[id]";
+
+        $empresas = mysqli_query($con, $sql);
+
+        $empresa = mysqli_fetch_assoc($empresas);
+    ?>
     <div class="container">
         <div class="row">
-            <div class="col-4 side">
+            <div class="col-4 side ">
                 <div class="mt-2" style="text-align:center;padding: 15px 20px 0px 20px; color: #fff; font-size:25px;">
                     <i class="far fa-user" style="font-size:50px; margin-bottom:10px;"></i>
                     <p><?=$_SESSION['usuario']['loginU']?></p>
@@ -33,48 +41,12 @@
                     <a href="salir.php" class="links-side">Salir</a>
                 </div>
             </div>
-            <div class="col-8 contenido">
-                <h2>Empresas</h2>
-
-                <form action="buscar.php" method="POST">
-                    <input type="text">
-                    <input type="submit" value ="Buscar" class="btn btn-info">
-                </form>
-
-                <?php
-                    $sql = "SELECT * FROM EMPRESA";
-                    
-                    $empresas = mysqli_query($con, $sql);
-
-                    if(mysqli_num_rows($empresas) >= 1){
-                    ?>
-                        <?php 
-                            while($empresa = mysqli_fetch_assoc($empresas)):
-                        ?>
-                            <div class="row mt-3 p-2 justify-content-between empresas ">
-                                <div class="col-4">
-                                    <p><?=$empresa['nombreEmpresa']?></p>
-                                </div>
-                                <div class="col-4">
-                                    <a class="btn btn-primary" href="empresa.php?id=<?=$empresa['idEmpresa']?>">Ver</a>
-                                    <a class="btn btn-danger" href="eliminacion/eliminar_empresa.php?id=<?=$empresa['idEmpresa']?>">Borrar</a>
-                                </div>
-                            </div>    
-                    <?php 
-                            endwhile;
-                    }
-                    else{
-                        echo '<h2>NO hay empresas</h2>';
-                    }
-                ?>
-                
-                <div class="row my-5">
-                    <div class="col" style="text-align: right">
-                        <a href="nueva_empresa.php" class="btn btn-success">Nueva Empresa</a>
-                    </div>
-                </div>
-
-
+            <div style="text-align: center" class="col-8 contenido">
+                <h3 class="mb-3 mt-5">¿Seguro que desea eliminar la empresa?</h3>
+                <p style="font-size:25px;">Empresa: <?=$empresa['nombreEmpresa']?></p>
+                <p style="font-size:20px;">RUC: <?=$empresa['RUC']?></p>
+                <a class="btn btn-outline-danger">Si</a>
+                <a class="btn btn-outline-primary">No</a>
             </div>
         </div>
 
