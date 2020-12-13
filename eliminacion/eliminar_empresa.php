@@ -30,11 +30,11 @@
                 </div>
                 <div>
                     <a href="" class="links-side">Mi Perfil</a>
-                    <a href="menu.php" class="links-side">Empresas</a>
+                    <a href="../menu.php" class="links-side">Empresas</a>
                     <?php 
                         if($_SESSION['usuario']['tipo'] == 'Administrador'){
                         ?>
-                            <a href="usuarios.php" class="links-side">Administrar Usuarios</a>
+                            <a href="../usuarios.php" class="links-side">Administrar Usuarios</a>
                         <?php 
                         }
                     ?>
@@ -45,8 +45,8 @@
                 <h3 class="mb-3 mt-5">¿Seguro que desea eliminar la empresa?</h3>
                 <p style="font-size:25px;">Empresa: <?=$empresa['nombreEmpresa']?></p>
                 <p style="font-size:20px;">RUC: <?=$empresa['RUC']?></p>
-                <a class="btn btn-outline-danger">Si</a>
-                <a class="btn btn-outline-primary">No</a>
+                <a href="eliminar.php?id=<?=$_GET['id']?>" class="btn btn-outline-danger">Si</a>
+                <a href="../menu.php" class="btn btn-outline-primary">No</a>
             </div>
         </div>
 

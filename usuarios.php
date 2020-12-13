@@ -62,7 +62,7 @@
                                 <?php 
                                     if($usuario['loginU'] != $_SESSION['usuario']['loginU']){
                                     ?>
-                                        <a class="btn btn-danger">Borrar</a>
+                                        <a href="eliminacion/eliminar_usuario.php?id=<?=$usuario['loginU']?>" class="btn btn-danger">Borrar</a>
                                         <?php  
                                     }
                                     else{
