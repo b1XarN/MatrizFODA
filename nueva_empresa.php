@@ -22,7 +22,7 @@
                     <p><?=$_SESSION['usuario']['loginU']?></p>
                 </div>
                 <div>
-                    <a href="" class="links-side">Mi Perfil</a>
+                    <a href="perfil.php" class="links-side">Mi Perfil</a>
                     <a href="menu.php" class="links-side">Empresas</a>
                     <?php 
                         if($_SESSION['usuario']['tipo'] == 'Administrador'){

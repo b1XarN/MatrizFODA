@@ -6,11 +6,16 @@
 
         $eliminarE = mysqli_query($con, $sqlE);
 
+        header('Location: ../menu.php');        
+
         // $empresa = mysqli_fetch_assoc($empresas);
     }else{
         $sqlU = "DELETE FROM USUARIO WHERE loginU = '$_GET[id]'";
 
         $eliminarU = mysqli_query($con,$sqlU);
+
+        header('Location: ../usuario.php');
     }
+
 
 ?>

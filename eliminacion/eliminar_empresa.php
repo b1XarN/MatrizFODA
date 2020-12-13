@@ -29,7 +29,7 @@
                     <p><?=$_SESSION['usuario']['loginU']?></p>
                 </div>
                 <div>
-                    <a href="" class="links-side">Mi Perfil</a>
+                    <a href="../perfil.php" class="links-side">Mi Perfil</a>
                     <a href="../menu.php" class="links-side">Empresas</a>
                     <?php 
                         if($_SESSION['usuario']['tipo'] == 'Administrador'){
@@ -38,7 +38,7 @@
                         <?php 
                         }
                     ?>
-                    <a href="salir.php" class="links-side">Salir</a>
+                    <a href="../salir.php" class="links-side">Salir</a>
                 </div>
             </div>
             <div style="text-align: center" class="col-8 contenido">
