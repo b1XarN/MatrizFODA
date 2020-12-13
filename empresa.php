@@ -23,11 +23,6 @@
         $sqlDA = "SELECT * FROM ESTRATEGIA where idEmpresa = $_GET[id] and tipoEstrategia='DA'";
         
 
-    
-
-
-
-
 
         $empresas = mysqli_query($con, $sql1);
         $fortalezas = mysqli_query($con, $sqlF);
