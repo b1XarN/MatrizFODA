@@ -35,10 +35,11 @@
             </div>
             <div class="col-8 contenido">
                 <h2>Empresas</h2>
+                <hr>
 
-                <form action="buscar.php" method="POST">
-                    <input type="text">
-                    <input type="submit" value ="Buscar" class="btn btn-info">
+                <form action="buscarE.php" method="POST" style="display: flex; flex-direction: row; justify-content: flex-end;">
+                    <input type="text" name="empresaBuscar">
+                    <input type="submit" name="submitBuscar" value ="Buscar" class="btn btn-info">
                 </form>
 
                 <?php

@@ -14,7 +14,7 @@
 
         $eliminarU = mysqli_query($con,$sqlU);
 
-        header('Location: ../usuario.php');
+        header('Location: ../usuarios.php');
     }
 
 

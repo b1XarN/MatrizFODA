@@ -1,7 +1,7 @@
-<?php  
+<?php
     require_once 'conexion.php';
+    // session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,59 +33,50 @@
                     <a href="salir.php" class="links-side">Salir</a>
                 </div>
             </div>
-
-
             <div class="col-8 contenido">
-                <h2>USUARIOS</h2>
+                <h2>Empresas</h2>
                 <hr>
-                
-                <form action="buscarU.php" method="POST" style="display: flex; flex-direction: row; justify-content: flex-end;">
-                    <input type="text" name="usuarioBuscar">
+
+                <form action="buscarE.php" method="POST" style="display: flex; flex-direction: row; justify-content: flex-end;">
+                    <input type="text">
                     <input type="submit" name="submitBuscar" value ="Buscar" class="btn btn-info">
                 </form>
 
-                <?php  
-                    $sql = "SELECT * FROM USUARIO";
+                <?php
+                    $sql = "SELECT * FROM EMPRESA where nombreEmpresa like '%$_POST[empresaBuscar]%'";
+                    
+                    $empresas = mysqli_query($con, $sql);
 
-                    $usuarios = mysqli_query($con, $sql);
-
-                    if(mysqli_num_rows($usuarios) >= 1){
-                ?>
+                    if(mysqli_num_rows($empresas) >= 1){
+                    ?>
+                        <?php 
+                            while($empresa = mysqli_fetch_assoc($empresas)):
+                        ?>
+                            <div class="row mt-3 p-2 justify-content-between empresas ">
+                                <div class="col-4">
+                                    <p><?=$empresa['nombreEmpresa']?></p>
+                                </div>
+                                <div class="col-4">
+                                    <a class="btn btn-primary" href="empresa.php?id=<?=$empresa['idEmpresa']?>">Ver</a>
+                                    <a class="btn btn-danger" href="eliminacion/eliminar_empresa.php?id=<?=$empresa['idEmpresa']?>">Borrar</a>
+                                </div>
+                            </div>    
                     <?php 
-                        while($usuario = mysqli_fetch_assoc($usuarios)):
-                    ?>
-                        <div class="row mt-3 p-2 justify-content-between empresas ">
-                            <div class="col-4 ">
-                                <p><?=$usuario['loginU']?></p>
-                            </div>
-                            <div class="col-4">
-                                <a class="btn btn-primary" href="index.php">Ver</a>
-                                <?php 
-                                    if($usuario['loginU'] != $_SESSION['usuario']['loginU']){
-                                    ?>
-                                        <a href="eliminacion/eliminar_usuario.php?id=<?=$usuario['loginU']?>" class="btn btn-danger">Borrar</a>
-                                        <?php  
-                                    }
-                                    else{
-                                        
-                                    }
-                                ?>
-                            </div>
-                        </div>
-                    <?php  
-                        endwhile;
-                    }else{
-                        echo '<h2>NO hay usuarios</h2>';
+                            endwhile;
                     }
-                    ?>
-                        <div class="row my-5">
-                            <div class="col" style="text-align: right">
-                                <a href="nuevo_usuario.php" class="btn btn-success">Nuevo Usuario</a>
-                            </div>
-                        </div>
+                    else{
+                        echo '<h2>NO hay empresas</h2>';
+                    }
+                ?>
+                
+                <div class="row my-5">
+                    <div class="col" style="text-align: right">
+                        <a href="nueva_empresa.php" class="btn btn-success">Nueva Empresa</a>
+                    </div>
+                </div>
+
+
             </div>
-
-
         </div>
 
 

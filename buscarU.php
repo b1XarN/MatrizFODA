@@ -45,7 +45,7 @@
                 </form>
 
                 <?php  
-                    $sql = "SELECT * FROM USUARIO";
+                    $sql = "SELECT * FROM USUARIO where loginU like '%$_POST[usuarioBuscar]%'";
 
                     $usuarios = mysqli_query($con, $sql);
 
