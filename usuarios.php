@@ -59,7 +59,7 @@
                                 <p><?=$usuario['loginU']?></p>
                             </div>
                             <div class="col-4">
-                                <a class="btn btn-primary" href="index.php">Ver</a>
+                                <a class="btn btn-primary" href="editar_usuario.php?id=<?=$usuario['loginU']?>">Editar</a>
                                 <?php 
                                     if($usuario['loginU'] != $_SESSION['usuario']['loginU']){
                                     ?>
