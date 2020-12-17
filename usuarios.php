@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/estilos.css">
     <script src="https://kit.fontawesome.com/496cc02742.js" crossorigin="anonymous"></script>
-    <title>Menu Principal</title>
+    <title>Administrar Usuarios</title>
 </head>
 <body>
     <div class="container">
@@ -39,7 +39,7 @@
 
 
             <div class="col-8 contenido">
-                <h2>USUARIOS</h2>
+                <h2>Administrar Usuarios</h2>
                 <hr>
                 
                 <form action="buscarU.php" method="POST" style="display: flex; flex-direction: row; justify-content: flex-end;">
@@ -57,12 +57,12 @@
                     <?php 
                         while($usuario = mysqli_fetch_assoc($usuarios)):
                     ?>
-                        <div class="row mt-3 p-2 justify-content-between empresas ">
-                            <div class="col-4 ">
-                                <p><?=$usuario['loginU']?></p>
+                        <div class="row mt-3 p-2 justify-content-between mx-4 empresas" style="width: 90%;">
+                            <div class="col-6 ">
+                                <p style="font-size:20px; margin: 5px 0px;"><?=$usuario['loginU']?></p>
                             </div>
-                            <div class="col-4">
-                                <a class="btn btn-primary" href="editar_usuario.php?id=<?=$usuario['loginU']?>">Editar</a>
+                            <div class="col-6" style="text-align:right">
+                                <a class="btn btn-primary mx-3 px-3" href="editar_usuario.php?id=<?=$usuario['loginU']?>">Editar</a>
                                 <?php 
                                     if($usuario['loginU'] != $_SESSION['usuario']['loginU']){
                                     ?>

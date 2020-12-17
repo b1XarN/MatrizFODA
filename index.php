@@ -1,7 +1,8 @@
 <?php 
     require_once 'conexion.php';
     if(isset($_SESSION['usuario'])){
-        header('Location: error_page.php');
+        session_destroy();
+        header('Location: index.php');
     }else{
 ?>
 <!DOCTYPE html>
@@ -18,10 +19,10 @@
         <div class="row contenedor-inic">
             <div class="col-12 ">
                 <form action="login.php" method="POST" enctype="multipart/form-data" class="formulario">
-                    <label for="" class="titulo-form">Iniciar Sesion</label><br>
-                    <input type="text" name="usuario" required="required" placeholder="Usuario" class="campos-inic"><br>
-                    <input type="password" name="contra" required="required" placeholder="Contraseña" class="campos-inic"><br>
-                    <input type="submit" name="submitIngresar" value="Ingresar" class="submit-inic">
+                    <label for="" class="titulo-form" style="color: #2b78e4;">Iniciar Sesion</label><br>
+                    <input type="text" style="width: 30%;" name="usuario" required="required" placeholder="Usuario" class="campos-inic"><br>
+                    <input type="password" style="width: 30%;" name="contra" required="required" placeholder="Contraseña" class="campos-inic"><br>
+                    <input type="submit" name="submitIngresar" style="padding: 5px 35px;" value="Ingresar" class="submit-inic btn btn-success">
                 </form>
             </div>
             <?php if(isset($_SESSION['error_login'])){?>
