@@ -38,24 +38,27 @@
             </div>
             <div class="col-8 contenido">
                 <h2>Nueva Empresa</h2>
+                <hr>
                 <div>
                     <form action="registro_emp.php" method="POST">
                         <label for="">Nombre Empresa</label><br>
-                        <input type="text" name="nombreEmpresa" required="required"><br>
+                        <input type="text" style="width: 90%;" name="nombreEmpresa" required="required"><br>
                         <label for="">RUC</label><br>
-                        <input type="text" name="ruc" pattern="[0-9]+" maxlength="11" minlength="11" required="required"><br>
+                        <input type="text" style="width: 90%;" name="ruc" pattern="[0-9]+" maxlength="11" minlength="11" required="required"><br>
                         <label for="">Mision</label><br>
-                        <textarea name="mision" id="" cols="30" rows="5" required="required"></textarea><br>
+                        <textarea name="mision" style="width: 90%;" id="" cols="30" rows="5" required="required"></textarea><br>
                         <label for="">Vision</label><br>
-                        <textarea name="vision" id="" cols="30" rows="5" required="required"></textarea><br>
+                        <textarea name="vision" style="width: 90%;" id="" cols="30" rows="5" required="required"></textarea><br>
                         <label for="">Propuesta de valor</label><br>
-                        <textarea name="valor" id="" cols="30" rows="5" required="required"></textarea><br>
+                        <textarea name="valor" style="width: 90%;" id="" cols="30" rows="5" required="required"></textarea><br>
                         <label for="">Factor diferenciador</label><br>
-                        <textarea name="factor" id="" cols="30" rows="5" required="required"></textarea><br>
+                        <textarea name="factor" style="width: 90%;" id="" cols="30" rows="5" required="required"></textarea><br>
                         <label for="">Objetivos Estrategicos</label><br>
-                        <textarea name="objetivos" id="" cols="30" rows="5" required="required"></textarea><br>
-                        <input type="submit" name="submitEmpresa" value="Guardar" class="btn btn-primary">
-                        <a href="menu.php" class="btn btn-danger">Cancelar</a>
+                        <textarea name="objetivos" style="width: 90%;" id="" cols="30" rows="5" required="required"></textarea><br>
+                        <div style="text-align: right;" class="my-3">
+                            <input type="submit" name="submitEmpresa" value="Guardar" class="btn btn-primary">
+                            <a href="menu.php" class="btn btn-danger">Cancelar</a>
+                        </div>
                     </form>
                 </div>
             </div>

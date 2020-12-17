@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/estilos.css">
     <script src="https://kit.fontawesome.com/496cc02742.js" crossorigin="anonymous"></script>
-    <title>Nueva Empresa</title>
+    <title>Nuevo Usuario</title>
 </head>
 <body>
     <div class="container">
@@ -38,54 +38,55 @@
             </div>
             <div class="col-8 contenido">
                 <h2>Nuevo Usuario</h2>
-               
+                <hr>
+
                     <form action="registro_usuario.php" method="POST">
                         <div class="row">
                             <div class="col-6 mb-3 ">
                                 <label for="">Nombres y Apellidos</label><br>
-                                <input type="text" name="nombres" required="required" pattern="[A-Z||a-z|| ]+"><br>
+                                <input type="text" style="width: 80%;" name="nombres" required="required" pattern="[A-Z||a-z|| ]+"><br>
 
                             </div>
                             <div class="col-6 mb-3 ">
                                 <label for="">DNI</label><br>
-                                <input type="text" name="dni" required="required" pattern="[0-9]+" maxlength="8" minlength="8"><br>
+                                <input type="text" style="width: 80%;" name="dni" required="required" pattern="[0-9]+" maxlength="8" minlength="8"><br>
                             </div>
 
                             <div class="col-6 mb-3">
                                 <label for="">Direccion</label><br>
-                                <input type="text" name="direccion" required="required"><br>
+                                <input type="text" style="width: 80%;" name="direccion" required="required"><br>
 
                             </div>
                             <div class="col-6 mb-3">
                                 <label for="">Telefono</label><br>
-                                <input type="text" name="telefono" required="required" pattern="[0-9]+"><br>
+                                <input type="text" style="width: 80%;" name="telefono" required="required" pattern="[0-9]+"><br>
                                 
                             </div>
                             <div class="col-12 mb-3">
                                 <label for="">Correo</label><br>
-                                <input type="email" name="email" required="required"><br>
+                                <input type="email" style="width: 38.5%;" name="email" required="required"><br>
                                 
                             </div>
 
                             <div class="col-6 mb-3">
                                 <label for="">Usuario</label><br>
-                                <input type="text" name="usuario" required="required"><br>                         
+                                <input type="text" style="width: 80%;" name="usuario" required="required"><br>                         
                                 
                             </div>
 
                             <div class="col-6 mb-3">
                                 <label for="">Contraseña</label><br>
-                                <input type="password" name="password" required="required"><br>
+                                <input type="password" style="width: 80%;" name="password" required="required"><br>
                                 
                             </div>
-                            <div class="col-6 mb-3">
+                            <div class="col-12 mb-3" style="text-align: center;">
                                 <label for="">Tipo</label>
                                 <select name="tipo" id="">
                                     <option value="Administrador">Administrador</option>
                                     <option value="Normal">Normal</option>
                                 </select>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 mb-5" style="text-align: center;">
                                 <input type="submit" name="submitGuardar" value="Guardar" class="btn btn-primary">
                                 <a href="menu.php" class="btn btn-danger">Cancelar</a>
 
