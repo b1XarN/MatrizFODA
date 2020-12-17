@@ -1,5 +1,6 @@
 <?php 
-    require_once 'conexion.php'
+    require_once 'conexion.php';
+    if(isset($_SESSION['usuario']) && isset($_GET['id'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,3 +60,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 </body>
 </html>
+<?php
+}else{
+    header('Location: error_page.php');
+} 
+?>

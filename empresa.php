@@ -1,5 +1,7 @@
 <?php 
     require_once 'conexion.php';
+
+    if(isset($_SESSION['usuario']) && isset($_GET['id'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -322,3 +324,8 @@
     <script type="text/javascript" src="js/exportarPDF.js"></script>
 </body>
 </html>
+<?php
+}else{
+    header('Location: error_page.php');
+} 
+?>
