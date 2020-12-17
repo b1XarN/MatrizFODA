@@ -43,15 +43,15 @@
                         <label for="">RUC</label><br>
                         <input type="text" name="ruc" pattern="[0-9]+" maxlength="11" minlength="11" required="required"><br>
                         <label for="">Mision</label><br>
-                        <textarea name="mision" id="" cols="30" rows="5"></textarea><br>
+                        <textarea name="mision" id="" cols="30" rows="5" required="required"></textarea><br>
                         <label for="">Vision</label><br>
-                        <textarea name="vision" id="" cols="30" rows="5"></textarea><br>
+                        <textarea name="vision" id="" cols="30" rows="5" required="required"></textarea><br>
                         <label for="">Propuesta de valor</label><br>
-                        <textarea name="valor" id="" cols="30" rows="5"></textarea><br>
+                        <textarea name="valor" id="" cols="30" rows="5" required="required"></textarea><br>
                         <label for="">Factor diferenciador</label><br>
-                        <textarea name="factor" id="" cols="30" rows="5"></textarea><br>
+                        <textarea name="factor" id="" cols="30" rows="5" required="required"></textarea><br>
                         <label for="">Objetivos Estrategicos</label><br>
-                        <textarea name="objetivos" id="" cols="30" rows="5"></textarea><br>
+                        <textarea name="objetivos" id="" cols="30" rows="5" required="required"></textarea><br>
                         <input type="submit" name="submitEmpresa" value="Guardar" class="btn btn-primary">
                         <a href="menu.php" class="btn btn-danger">Cancelar</a>
                     </form>
