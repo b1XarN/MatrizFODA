@@ -23,7 +23,10 @@
         $sqlFA = "SELECT * FROM ESTRATEGIA where idEmpresa = $_GET[id] and tipoEstrategia='FA'";
         $sqlDO = "SELECT * FROM ESTRATEGIA where idEmpresa = $_GET[id] and tipoEstrategia='DO'";
         $sqlDA = "SELECT * FROM ESTRATEGIA where idEmpresa = $_GET[id] and tipoEstrategia='DA'";
-        
+        $sqlComFO = "SELECT * FROM ELEMENTO where idEmpresa = $_GET[id] and (tipoElemento = 'F' or tipoElemento = 'O')";
+        $sqlComFA = "SELECT * FROM ELEMENTO where idEmpresa = $_GET[id] and (tipoElemento = 'F' or tipoElemento = 'A')";
+        $sqlComDO = "SELECT * FROM ELEMENTO where idEmpresa = $_GET[id] and (tipoElemento = 'D' or tipoElemento = 'O')";
+        $sqlComDA = "SELECT * FROM ELEMENTO where idEmpresa = $_GET[id] and (tipoElemento = 'D' or tipoElemento = 'A')";
 
 
         $empresas = mysqli_query($con, $sql1);
@@ -35,6 +38,7 @@
         $estrategiasFA = mysqli_query($con, $sqlFA);
         $estrategiasDO = mysqli_query($con, $sqlDO);
         $estrategiasDA = mysqli_query($con, $sqlDA);
+        
         
 
         $empresa = mysqli_fetch_assoc($empresas);
@@ -156,7 +160,13 @@
                                         <li><?=$estrategiaFO['descEstrat']?> 
                                             (<?php
                                                 while($Link = mysqli_fetch_assoc($Links)):
-                                                    echo $Link['idElemento'].',';
+                                                    $comparacionesFO = mysqli_query($con, $sqlComFO);
+                                                    while($comparacionFO = mysqli_fetch_assoc($comparacionesFO)):
+                                                        if($Link['idElemento'] == $comparacionFO['idElemento']){
+                                                            echo $comparacionFO['tipoElemento'].$Link['idElemento'].',';
+                                                            break;
+                                                        }
+                                                    endwhile;
                                                 endwhile;
                                             ?>)
                                         </li>
@@ -186,7 +196,13 @@
                                         <li><?=$estrategiaFA['descEstrat']?>
                                             (<?php
                                                 while($Link = mysqli_fetch_assoc($Links)):
-                                                    echo $Link['idElemento'].',';
+                                                    $comparacionesFA = mysqli_query($con, $sqlComFA);
+                                                    while($comparacionFA = mysqli_fetch_assoc($comparacionesFA)):
+                                                        if($Link['idElemento'] == $comparacionFA['idElemento']){
+                                                            echo $comparacionFA['tipoElemento'].$Link['idElemento'].',';
+                                                            break;
+                                                        }
+                                                    endwhile;
                                                 endwhile;
                                             ?>)
                                         </li>
@@ -240,7 +256,13 @@
                                         <li><?=$estrategiaDO['descEstrat']?>
                                             (<?php
                                                 while($Link = mysqli_fetch_assoc($Links)):
-                                                    echo $Link['idElemento'].',';
+                                                    $comparacionesDO = mysqli_query($con, $sqlComDO);
+                                                    while($comparacionDO = mysqli_fetch_assoc($comparacionesDO)):
+                                                        if($Link['idElemento'] == $comparacionDO['idElemento']){
+                                                            echo $comparacionDO['tipoElemento'].$Link['idElemento'].',';
+                                                            break;
+                                                        }
+                                                    endwhile;
                                                 endwhile;
                                             ?>)
                                         </li>
@@ -270,7 +292,13 @@
                                         <li><?=$estrategiaDA['descEstrat']?>
                                             (<?php
                                                 while($Link = mysqli_fetch_assoc($Links)):
-                                                    echo $Link['idElemento'].',';
+                                                    $comparacionesDA = mysqli_query($con, $sqlComDA);
+                                                    while($comparacionDA = mysqli_fetch_assoc($comparacionesDA)):
+                                                        if($Link['idElemento'] == $comparacionDA['idElemento']){
+                                                            echo $comparacionDA['tipoElemento'].$Link['idElemento'].',';
+                                                            break;
+                                                        }
+                                                    endwhile;
                                                 endwhile;
                                             ?>)
                                         </li>
