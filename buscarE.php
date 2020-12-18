@@ -38,7 +38,7 @@
                 <hr>
 
                 <form action="buscarE.php" method="POST" style="display: flex; flex-direction: row; justify-content: flex-end;">
-                    <input type="text">
+                    <input type="text" name="empresaBuscar">
                     <input type="submit" name="submitBuscar" value ="Buscar" class="btn btn-info">
                 </form>
 
@@ -52,12 +52,12 @@
                         <?php 
                             while($empresa = mysqli_fetch_assoc($empresas)):
                         ?>
-                            <div class="row mt-3 p-2 justify-content-between empresas ">
-                                <div class="col-4">
-                                    <p><?=$empresa['nombreEmpresa']?></p>
+                            <div class="row mt-3 p-2 justify-content-between mx-4 empresas" style="width: 90%;">
+                                <div class="col-6">
+                                    <p style="font-size:20px; margin: 5px 0px;"><?=$empresa['nombreEmpresa']?></p>
                                 </div>
-                                <div class="col-4">
-                                    <a class="btn btn-primary" href="empresa.php?id=<?=$empresa['idEmpresa']?>">Ver</a>
+                                <div class="col-6" style="text-align:right">
+                                    <a class="btn btn-primary mx-3 px-3" href="empresa.php?id=<?=$empresa['idEmpresa']?>">Ver</a>
                                     <a class="btn btn-danger" href="eliminacion/eliminar_empresa.php?id=<?=$empresa['idEmpresa']?>">Borrar</a>
                                 </div>
                             </div>    
@@ -65,7 +65,7 @@
                             endwhile;
                     }
                     else{
-                        echo '<h2>NO hay empresas</h2>';
+                        echo '<h3>NO hay empresas con la busqueda: '.$_POST['empresaBuscar'].'</h3>';
                     }
                 ?>
                 
