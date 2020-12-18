@@ -29,28 +29,37 @@
         <div class="row">
             <div class="col">
                 <form action="registro_FA.php?id=<?=$_GET['id']?>" method="POST">
-                    <?php 
-                        if(mysqli_num_rows($fortalezas) >= 1 && mysqli_num_rows($amenazas) >= 1){
-                            while($fortaleza = mysqli_fetch_assoc($fortalezas)):
-                            ?>
-                                F<?=$fortaleza['idElemento']?>: <?=$fortaleza['descElemento']?>  <input type="checkbox" name="fortalezas[]" value="<?=$fortaleza['idElemento']?>"><br>
-                            <?php  
-                                endwhile;
-
-                            while($amenaza = mysqli_fetch_assoc($amenazas)):  
+                    <div class="row my-3 align-items-center" style="text-align: center">
+                        <?php 
+                            if(mysqli_num_rows($fortalezas) >= 1 && mysqli_num_rows($amenazas) >= 1){
+                                echo '<div class="col-6" >';
+                                while($fortaleza = mysqli_fetch_assoc($fortalezas)):
                                 ?>
-                                A<?=$amenaza['idElemento']?>: <?=$amenaza['descElemento']?>  <input type="checkbox" name="amenazas[]" value="<?=$amenaza['idElemento']?>"><br> 
-                            <?php 
-                                endwhile;
-                        }
-                        else{
-                            echo '<p> Deben de haber minimo una fortaleza o una amenaza</p>';
-                        }
-                    ?>
-                    <label for="" class="mt-3">Estrategia</label><br>
-                    <input type="text" name="estrategiaFA" required="required" class="campos-edit-matriz"><br>
-                    <input type="submit" name="submitGuardar" value="Guardar Estrategia" class="btn btn-primary mt-3">
-                    <a href="editar_matriz.php?id=<?=$_GET['id']?>" class="btn btn-danger mt-3">Salir</a>
+                                    <input type="checkbox" name="fortalezas[]" value="<?=$fortaleza['idElemento']?>"> F<?=$fortaleza['idElemento']?>: <?=$fortaleza['descElemento']?>  <br>
+                                <?php  
+                                    endwhile;
+                                echo '</div>';
+                                echo '<div class="col-6" >';
+                                while($amenaza = mysqli_fetch_assoc($amenazas)):  
+                                    ?>
+                                    <input type="checkbox" name="amenazas[]" value="<?=$amenaza['idElemento']?>"> A<?=$amenaza['idElemento']?>: <?=$amenaza['descElemento']?>  <br> 
+                                <?php 
+                                    endwhile;
+                                echo '</div>';
+                            }
+                            else{
+                                echo '<p> Deben de haber minimo una fortaleza o una amenaza</p>';
+                            }
+                        ?>
+                        <div class="col-12">
+                            <label for="" class="mt-3">Estrategia</label><br>
+                            <input type="text" name="estrategiaFA" required="required" class="campos-edit-matriz"><br>
+                        </div>
+                        <div class="col-12">
+                            <input type="submit" name="submitGuardar" value="Guardar Estrategia" class="btn btn-primary mt-3">
+                            <a href="editar_matriz.php?id=<?=$_GET['id']?>" class="btn btn-danger mt-3">Salir</a>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
