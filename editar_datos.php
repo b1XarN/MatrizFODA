@@ -29,21 +29,23 @@
                 <div class="">
                     <form action="edicionE.php?id=<?=$_GET['id']?>" method="POST">
                         <label for="">Nombre</label><br>
-                        <input type="text" name="nombre" value="<?=$empresa['nombreEmpresa']?>"><br>
+                        <input type="text" style="width:100%; margin-bottom: 10px;" name="nombre" value="<?=$empresa['nombreEmpresa']?>"><br>
                         <label for="">RUC</label><br>
-                        <input type="text" name="ruc" value="<?=$empresa['RUC']?>" disabled="disabled"><br>
+                        <input type="text" style="width:100%; margin-bottom: 10px;" name="ruc" value="<?=$empresa['RUC']?>" disabled="disabled"><br>
                         <label for="">Mision</label><br>
-                        <textarea name="mision" placeholder="<?=$empresa['mision']?>" id="" cols="30" rows="5"></textarea><br>
+                        <textarea name="mision" style="width:100%; margin-bottom: 10px;" placeholder="<?=$empresa['mision']?>" id="" cols="30" rows="5"></textarea><br>
                         <label for="">Vision</label><br>
-                        <textarea name="vision" placeholder="<?=$empresa['vision']?>" id="" cols="30" rows="5"></textarea><br>
+                        <textarea name="vision" style="width:100%; margin-bottom: 10px;" placeholder="<?=$empresa['vision']?>" id="" cols="30" rows="5"></textarea><br>
                         <label for="">Propuesta de valor</label><br>
-                        <textarea name="valor" placeholder="<?=$empresa['propuestaValor']?>" id="" cols="30" rows="5"></textarea><br>
+                        <textarea name="valor" style="width:100%; margin-bottom: 10px;" placeholder="<?=$empresa['propuestaValor']?>" id="" cols="30" rows="5"></textarea><br>
                         <label for="">Factor diferenciador</label><br>
-                        <textarea name="factor" placeholder="<?=$empresa['factorDiferenciador']?>" id="" cols="30" rows="5"></textarea><br>
+                        <textarea name="factor" style="width:100%; margin-bottom: 10px;" placeholder="<?=$empresa['factorDiferenciador']?>" id="" cols="30" rows="5"></textarea><br>
                         <label for="">Objetivos Estrategicos</label><br>
-                        <textarea name="objetivos" placeholder="<?=$empresa['objetivo']?>" id="" cols="30" rows="5"></textarea><br>
-                        <input type="submit" name="submitActualizar" value="Actualizar" class="btn btn-primary">
-                        <a href="empresa.php?id=<?=$_GET['id']?>" class="btn btn-danger">Cancelar</a>
+                        <textarea name="objetivos" style="width:100%; margin-bottom: 10px;" placeholder="<?=$empresa['objetivo']?>" id="" cols="30" rows="5"></textarea><br>
+                        <div style="text-align:center;">
+                            <input type="submit" name="submitActualizar" value="Actualizar" class="btn btn-primary">
+                            <a href="empresa.php?id=<?=$_GET['id']?>" class="btn btn-danger">Cancelar</a>
+                        </div>
                     </form>
                 </div>
             </div>

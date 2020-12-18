@@ -29,40 +29,62 @@
             <div class="col-8">
                 <div class="">
                     <form action="edicionU.php?id=<?=$_GET['id']?>" method="POST">
-                        <label for="">Nombres y Apellidos</label><br>
-                        <input type="text" name="nombresApellidos" value="<?=$usuario['nombresApellidos']?>" disabled="disabled"><br>
-                        <label for="">DNI</label><br>
-                        <input type="text" name="dni" value="<?=$usuario['DNI']?>" disabled><br>
-                        <label for="">Direccion</label><br>
-                        <input type="text" name="direccion" value="<?=$usuario['direccion']?>" required="required"><br>
-                        <label for="">Telefono</label><br>
-                        <input type="text" name="telefono" value="<?=$usuario['telefono']?>" pattern="[0-9]+" required="required"><br>
-                        <label for="">Correo</label><br>
-                        <input type="email" name="correo" value="<?=$usuario['correo']?>" required="required"><br>
-                        <label for="">Usuario</label><br>
-                        <input type="text" name="usuario" value="<?=$usuario['loginU']?>" disabled><br>
-                        <label for="">Contraseña</label><br>
-                        <input type="text" name="contrasena" value="<?=$usuario['contra']?>" ><br>
-                        <?php  
-                            if($usuario['tipo'] == 'Administrador'){
-                                ?>
-                                <label for="">Tipo</label><br>
-                                <select name="tipo" id="" class="mb-3">
-                                    <option value="Administrador">Administrador</option>
-                                </select><br>
+                        <div class="row justify-content-center" style="">
+                            <div class="col-6 mb-3">
+                                <label for="">Nombres y Apellidos</label><br>
+                                <input type="text" style="width: 80%;" name="nombresApellidos" value="<?=$usuario['nombresApellidos']?>" disabled="disabled"><br>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label for="">DNI</label><br>
+                                <input type="text" style="width: 80%;" name="dni" value="<?=$usuario['DNI']?>" disabled><br>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label for="">Direccion</label><br>
+                                <input type="text" style="width: 80%;" name="direccion" value="<?=$usuario['direccion']?>" required="required"><br>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label for="">Telefono</label><br>
+                                <input type="text" style="width: 80%;" name="telefono" value="<?=$usuario['telefono']?>" pattern="[0-9]+" required="required"><br>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="">Correo</label><br>
+                                <input type="email" style="width: 38.5%;" name="correo" value="<?=$usuario['correo']?>" required="required"><br>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label for="">Usuario</label><br>
+                                <input type="text" style="width: 80%;" name="usuario" value="<?=$usuario['loginU']?>" disabled><br>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label for="">Contraseña</label><br>
+                                <input type="text" style="width: 80%;" name="contrasena" value="<?=$usuario['contra']?>" ><br>
+                            </div>
+                            <?php  
+                                if($usuario['tipo'] == 'Administrador'){
+                                    ?>
+                                    <div class="col-12 mb-3" style="text-align:center">
+                                        <label for="">Tipo</label>
+                                        <select name="tipo" id="" class="mb-3">
+                                            <option value="Administrador">Administrador</option>
+                                        </select><br>
+                                    </div>
+                                    <?php 
+                                }else{
+                                    ?>
+                                    <div class="col-12 mb-3" style="text-align:center">
+                                        <label for="">Tipo</label>
+                                        <select name="tipo" id="" class="mb-3">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Administrador">Administrador</option>
+                                        </select><br>
+                                    </div>
                                 <?php 
-                            }else{
-                                ?>
-                                <label for="">Tipo</label><br>
-                                <select name="tipo" id="" class="mb-3">
-                                    <option value="Normal">Normal</option>
-                                    <option value="Administrador">Administrador</option>
-                                </select><br>
-                            <?php 
-                            }
-                        ?>
-                        <input type="submit" name="submitActualizar" value="Actualizar" class="btn btn-primary">
-                        <a href="usuarios.php" class="btn btn-danger">Salir</a>
+                                }
+                            ?>
+                            <div class="col-12 mb-5" style="text-align:center">
+                                <input type="submit" name="submitActualizar" value="Actualizar" class="btn btn-primary">
+                                <a href="usuarios.php" class="btn btn-danger">Salir</a>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
